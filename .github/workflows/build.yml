@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  build-c:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Compile C code
+      run: make -j$(nproc) c
+
+  build-cpp:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Compile C++ code
+      run: make -j$(nproc) cpp
+
+  build-java:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+
+    - name: Compile Java code
+      run: make -j$(nproc) java
+
+  build-kotlin:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up Kotlin
+      run: | 
+        curl -s "https://get.sdkman.io" | bash
+        source "$HOME/.sdkman/bin/sdkman-init.sh"
+        sdk install java 21-tem
+        sdk install kotlin
+
+    - name: Compile Kotlin code
+      run: make -j$(nproc) kotlin

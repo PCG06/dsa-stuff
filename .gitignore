@@ -1,0 +1,11 @@
+.vscode/
+.idea/
+.gradle/
+build/
+*.o
+*.exe
+*.class
+*.jar
+*.iml
+.DS_Store
+Thumbs.db
