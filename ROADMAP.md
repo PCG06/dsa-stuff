@@ -12,7 +12,7 @@
 | DSA06 | Stack using Array                  | Easy        | [C](src/c/stack_arr.c), [C++](src/cpp/stack_arr.cpp), [Java](src/java/StackArr.java), [Kotlin](src/kotlin/StackArr.kt)                             |
 | DSA07 | Queue using Array                  | Easy        | [C](src/c/queue_arr.c), [C++](src/cpp/queue_arr.cpp), [Java](src/java/QueueArr.java), [Kotlin](src/kotlin/QueueArr.kt)                             |
 | DSA08 | Dynamic Array                      | Easy-Medium | [C](src/c/dyn_array.c)                                                                                                                             |
-| DSA09 | Prefix Sum Array                   | Easy-Medium |                                                                                                                                                    |
+| DSA09 | Prefix Sum Array                   | Easy-Medium | [C](src/c/prefix_sum_array.c), [C++](src/cpp/prefix_sum_array.cpp), [Java](src/java/PrefixSumArray.java), [Kotlin](src/kotlin/PrefixSumArray.kt)   |
 | DSA10 | Circular Queue                     | Medium      |                                                                                                                                                    |
 | DSA11 | Singly Linked List                 | Medium      |                                                                                                                                                    |
 | DSA12 | Doubly Linked List                 | Medium      |                                                                                                                                                    |
