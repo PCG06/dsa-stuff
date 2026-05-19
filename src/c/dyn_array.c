@@ -1,4 +1,4 @@
-// C01: Dynamic array
+// DSA08 (C): Dynamic Array
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,48 +58,40 @@ int main() {
 
             // 2: Pop end
             case 2:
-            {
                 if (getarrsize(&arr) == 0) {
                     printf("There is nothing to pop!");
                 } else {
                     int val = poparr(&arr);
                     printf("Element %d popped!", val);
                 }
-            }
             break;
 
             // 3: Sorting
             case 3:
-            {
                 if (getarrsize(&arr) == 0) {
                     printf("There is nothing to sort!");
                 } else {
                     sortarr(&arr);
                     printf("Array sorted!");
                 }
-            }
             break;
 
             // 4: Display array
             case 4:
-            {
                 if (getarrsize(&arr) == 0) {
                     printf("There is nothing to display!");
                 } else {
                     printf("Array elements are: ");
                     printarr(&arr, ", ");
                 }
-            }
             break;
 
             // 5: Display array
             case 5:
-            {
                 printf("--- Array details ---\n");
                 printf("Array memory: %zu (bytes)\n", sizeof(arr));
                 printf("Array size: %zu\n", getarrsize(&arr));
                 printf("Array capacity: %zu", getarrcapacity(&arr));
-            }
             break;
 
             // 6: Exiting

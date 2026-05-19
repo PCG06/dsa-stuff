@@ -1,8 +1,8 @@
-// DSA02 (Java): Binary Search
+// DSA01 (Java): Linear Search
 
 import java.util.Scanner;
 
-class BinarySearch {
+public class LinearSearch {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -22,7 +22,7 @@ class BinarySearch {
             System.out.print(i + " ");
         System.out.println();
 
-        int pos = binarySearch(arr, target);
+        int pos = linearSearch(arr, target);
 
         if (pos != -1)
             System.out.println("Element found at index " + pos);
@@ -32,20 +32,10 @@ class BinarySearch {
         sc.close();
     }
 
-    static int binarySearch(int[] arr, int target) {
-        int low = 0;
-        int high = arr.length - 1;
-
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-
-            if (target == arr[mid])
-                return mid;
-
-            if (target < arr[mid])
-                high = mid - 1;
-            else
-                low = mid + 1;
+    static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target)
+                return i;
         }
         return -1;
     }

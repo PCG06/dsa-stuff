@@ -3,6 +3,8 @@
 This repository contains DSA programs I've written for C, C++, Java and Kotlin.  
 Enjoy.
 
+Check out the [ROADMAP.md](ROADMAP.md) for progress and quick links to the algorithms.
+
 ## Installation
 
 ### Install dependencies
@@ -114,7 +116,7 @@ make BinarySearch.kt
 make clean
 ```
 
-## Summary of Commands
+## Summary of Important Commands
 
 | Command                 | Action                                          |
 |-------------------------|-------------------------------------------------|
@@ -123,4 +125,8 @@ make clean
 | `make some_file.cpp`    | Compiles and runs specified C++ source file.    |
 | `make SomeFile.java`    | Compiles and runs specified Java source file.   |
 | `make SomeFile.kotlin`  | Compiles and runs specified Kotlin source file. |
+| `make c`                | Compiles all C source files.                    |
+| `make cpp`              | Compiles all C++ source files.                  |
+| `make java`             | Compiles all Java source files.                 |
+| `make kotlin`           | Compiles all Kotlin source files.               |
 | `make clean`            | Deletes the `build/` directory.                 |

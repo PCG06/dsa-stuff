@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Compile C code
-      run: make -j$(nproc) c
+      run: time make -j$(nproc) c
 
   build-cpp:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Compile C++ code
-      run: make -j$(nproc) cpp
+      run: time make -j$(nproc) cpp
 
   build-java:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
         java-version: '21'
 
     - name: Compile Java code
-      run: make -j$(nproc) java
+      run: time make -j$(nproc) java
 
   build-kotlin:
     runs-on: ubuntu-latest
@@ -50,5 +50,6 @@ jobs:
         sdk install java 21-tem
         sdk install kotlin
 
+    # Parallel Kotlin compilation with -j may cause OOM.
     - name: Compile Kotlin code
-      run: make -j$(nproc) kotlin
+      run: time make kotlin

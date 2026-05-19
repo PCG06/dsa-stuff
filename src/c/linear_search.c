@@ -1,8 +1,8 @@
-// DSA02 (C): Binary Search
+// DSA01 (C): Linear Search
 
 #include <stdio.h>
 
-int binarySearch(int arr[], int n, int target);
+int linearSearch(int arr[], int n, int target);
 
 int main() {
     int n;
@@ -23,7 +23,7 @@ int main() {
         printf("%d ", arr[i]);
     printf("\n");
 
-    int pos = binarySearch(arr, n, target);
+    int pos = linearSearch(arr, n, target);
 
     if (pos != -1)
         printf("Element found at index %d", pos);
@@ -34,20 +34,10 @@ int main() {
     return 0;
 }
 
-int binarySearch(int arr[], int n, int target) {
-    int low = 0;
-    int high = n - 1;
-
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-
-        if (target == arr[mid])
-            return mid;
-        
-        if (target < arr[mid])
-            high = mid - 1;
-        else
-            low = mid + 1;
+int linearSearch(int arr[], int n, int target) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target)
+            return i;
     }
     return -1;
 }

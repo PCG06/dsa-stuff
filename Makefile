@@ -91,7 +91,7 @@ $(BUILD_DIR)/kotlin/%.class: $(SRC)/kotlin/%.kt | $(BUILD_DIR)/kotlin
 		echo "Error: $(SRC)/kotlin/$*.kt not found"; \
 		exit 1; \
 	fi
-	kotlin -cp $(BUILD_DIR)/kotlin $$(echo '$*' | sed 's/.*/\u&/')Kt
+	kotlin -cp $(BUILD_DIR)/kotlin $*Kt
 
 # Compile specific language
 c: $(C_BIN)

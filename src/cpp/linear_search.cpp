@@ -1,11 +1,11 @@
-// DSA02 (C++): Binary Search
+// DSA01 (C++): Linear Search
 
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-int binarySearch(vector<int>& arr, int target);
+int linearSearch(vector<int>& arr, int target);
 
 int main() {
     int n;
@@ -26,7 +26,7 @@ int main() {
         cout << i << ' ';
     cout << "\n";
 
-    int pos = binarySearch(arr, target);
+    int pos = linearSearch(arr, target);
 
     if (pos != -1)
         cout << "Element found at index " << pos << "\n";
@@ -36,22 +36,12 @@ int main() {
     return 0;
 }
 
-int binarySearch(vector<int>& arr, int target) {
-    int low = 0;
-    int high = arr.size() - 1;
+int linearSearch(vector<int>& arr, int target) {
+    size_t n = arr.size();
 
-    while (low <= high)
-    {
-        int mid = low + (high - low) / 2;
-
-        if (target == arr[mid])
-            return mid;
-
-        if (target < arr[mid])
-            high = mid - 1;
-        else
-            low = mid + 1;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target)
+            return i;
     }
-
     return -1;
 }

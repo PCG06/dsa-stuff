@@ -1,8 +1,8 @@
-// DSA03 (C): Bubble Sort
+// DSA04 (C): Insertion Sort
 
 #include <stdio.h>
 
-void bubbleSort(int arr[], int n);
+void insertionSort(int arr[], int n);
 
 int main() {
     int n;
@@ -19,7 +19,7 @@ int main() {
         printf("%d ", arr[i]);
     printf("\n");
 
-    bubbleSort(arr, n);
+    insertionSort(arr, n);
 
     printf("Array elements after sorting are: ");
     for (int i = 0; i < n; i++)
@@ -29,14 +29,15 @@ int main() {
     return 0;
 }
 
-void bubbleSort(int arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
+void insertionSort(int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = key;
     }
 }

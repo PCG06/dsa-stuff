@@ -1,4 +1,4 @@
-// DSA02 (Kotlin): Binary Search
+// DSA01 (Kotlin): Linear Search
 
 import java.util.Scanner
 
@@ -8,7 +8,7 @@ fun main() {
     print("Enter the number of elements: ")
     val n = sc.nextInt()
 
-    val arr = IntArray(n)
+    var arr = IntArray(n)
     print("Enter the elements: ")
     for (i in arr.indices)
         arr[i] = sc.nextInt()
@@ -21,7 +21,7 @@ fun main() {
         print("$i ")
     println()
 
-    val pos = binarySearch(arr, target)
+    val pos = linearSearch(arr, target)
 
     if (pos != -1)
         println("Element found at index $pos")
@@ -31,21 +31,10 @@ fun main() {
     sc.close()
 }
 
-fun binarySearch(arr: IntArray, target: Int): Int {
-    var low = 0
-    var high = arr.size - 1
-
-    while (low <= high) {
-        val mid = low + (high - low) / 2
-
-        if (target == arr[mid])
-            return mid
-
-        if (target < arr[mid])
-            high = mid - 1
-        else
-            low = mid + 1
+fun linearSearch(arr: IntArray, target: Int): Int {
+    for (i in arr.indices) {
+        if (arr[i] == target)
+            return i
     }
-
     return -1
 }
