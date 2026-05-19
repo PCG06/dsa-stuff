@@ -11,29 +11,21 @@ typedef struct Array {
 
 Array array(size_t capacity);
 void freearr(Array *arr);
+int empty(Array *arr);
+size_t getarrmemory(Array *arr);
 size_t getarrsize(Array *arr);
 size_t getarrcapacity(Array *arr);
-int pusharr(Array *arr, int value);
+int pusharr(Array *arr, int ele);
 int poparr(Array *arr);
-void printarr(Array *arr, char *sep);
 void sortarr(Array *arr);
 
 int main() {
-    size_t n;
-    printf("Enter number of elements: ");
-    scanf("%zu", &n);
-
-    Array arr = array(n);
-    printf("Enter the elements: ");
-    for (int i = 0; i < n; i++) {
-        int val;
-        scanf("%d", &val);
-        pusharr(&arr, val);
-    }
+    #define MAX 10
+    Array arr = array(MAX);
 
     int ch = 0;
     do {
-        printf("\n--- Menu ---\n"
+        printf("--- Menu ---\n"
                 "1. Push element (end)\n"
                 "2. Pop element (end)\n"
                 "3. Sort elements\n"
@@ -48,50 +40,52 @@ int main() {
             // 1: Push end
             case 1:
             {
-                int val;
+                int ele;
                 printf("Enter the new element: ");
-                scanf("%d", &val);
-                if (pusharr(&arr, val) == 0)
-                    printf("Element %d pushed!", val);
+                scanf("%d", &ele);
+                if (pusharr(&arr, ele) == 0)
+                    printf("Element %d pushed!\n", ele);
             }
             break;
 
             // 2: Pop end
             case 2:
-                if (getarrsize(&arr) == 0) {
-                    printf("There is nothing to pop!");
+                if (empty(&arr)) {
+                    printf("There is nothing to pop!\n");
                 } else {
-                    int val = poparr(&arr);
-                    printf("Element %d popped!", val);
+                    int ele = poparr(&arr);
+                    printf("Element %d popped!\n", ele);
                 }
             break;
 
             // 3: Sorting
             case 3:
-                if (getarrsize(&arr) == 0) {
-                    printf("There is nothing to sort!");
+                if (empty(&arr)) {
+                    printf("There is nothing to sort!\n");
                 } else {
                     sortarr(&arr);
-                    printf("Array sorted!");
+                    printf("Array sorted!\n");
                 }
             break;
 
             // 4: Display array
             case 4:
-                if (getarrsize(&arr) == 0) {
+                if (empty(&arr)) {
                     printf("There is nothing to display!");
                 } else {
                     printf("Array elements are: ");
-                    printarr(&arr, ", ");
+                    for (int i = 0; i < arr.size; i++)
+                        printf("%d ", arr.data[i]);
+                    printf("\n");
                 }
             break;
 
-            // 5: Display array
+            // 5: Show information
             case 5:
-                printf("--- Array details ---\n");
-                printf("Array memory: %zu (bytes)\n", sizeof(arr));
+                printf("\n--- Array details ---\n");
+                printf("Array memory: %zu (bytes)\n", getarrmemory(&arr));
                 printf("Array size: %zu\n", getarrsize(&arr));
-                printf("Array capacity: %zu", getarrcapacity(&arr));
+                printf("Array capacity: %zu\n", getarrcapacity(&arr));
             break;
 
             // 6: Exiting
@@ -101,12 +95,13 @@ int main() {
 
             // Invalid input
             default:
-                printf("Invalid choice! Enter again");
+                printf("Invalid choice! Enter again\n");
             break;
         }
         printf("\n");
     } while (ch != 6);
 
+    freearr(&arr);
     return 0;
 }
 
@@ -122,6 +117,14 @@ Array array(size_t capacity) {
     arr.capacity = capacity;
 
     return arr;
+}
+
+int empty(Array *arr) {
+    return getarrsize(arr) == 0;
+}
+
+size_t getarrmemory(Array *arr) {
+    return arr->capacity * sizeof(int);
 }
 
 size_t getarrsize(Array *arr) {
@@ -140,7 +143,7 @@ void freearr(Array *arr) {
     arr->capacity = 0;
 }
 
-int pusharr(Array *arr, int value) {
+int pusharr(Array *arr, int ele) {
     if (arr->size >= arr->capacity) {
         arr->capacity *= 2;
 
@@ -151,7 +154,7 @@ int pusharr(Array *arr, int value) {
 
         arr->data = temp;
     }
-    arr->data[arr->size++] = value;
+    arr->data[arr->size++] = ele;
     return 0;
 }
 
@@ -159,7 +162,7 @@ int poparr(Array *arr) {
     if (arr->size == 0)
         exit(1);
 
-    int value = arr->data[--arr->size];
+    int ele = arr->data[--arr->size];
 
     if (arr->size < arr->capacity / 4) {
         arr->capacity /= 2;
@@ -174,13 +177,7 @@ int poparr(Array *arr) {
             
         arr->data = temp;
     }
-    return value;
-}
-
-void printarr(Array *arr, char *sep) {
-    for (size_t i = 0; i < arr->size - 1; i++)
-        printf("%d%s", arr->data[i], sep);
-    printf("%d", arr->data[arr->size - 1]);
+    return ele;
 }
 
 int _compare(const void *a, const void *b) {
