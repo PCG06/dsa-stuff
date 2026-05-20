@@ -88,7 +88,7 @@ fun dequeue() {
 
 fun peek() {
     if (isEmpty()) {
-        println("Queue underflow!")
+        println("Queue is empty!")
         return
     }
 
@@ -96,8 +96,8 @@ fun peek() {
 }
 
 fun display() {
-    if (isFull()) {
-        println("Queue overflow!")
+    if (isEmpty()) {
+        println("Queue is empty!")
         return
     }
 

@@ -101,7 +101,7 @@ public class QueueArr {
 
     static void peek() {
         if (isEmpty()) {
-            System.out.println("Queue underflow!");
+            System.out.println("Queue is empty!");
             return;
         }
 
@@ -109,8 +109,8 @@ public class QueueArr {
     }
 
     static void display() {
-        if (isFull()) {
-            System.out.println("Queue overflow!");
+        if (isEmpty()) {
+            System.out.println("Queue is empty!");
             return;
         }
 

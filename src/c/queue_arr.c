@@ -103,7 +103,7 @@ static void dequeue(void) {
 
 static void peek(void) {
     if (isEmpty()) {
-        printf("Queue underflow!\n");
+        printf("Queue is empty!\n");
         return;
     }
 
@@ -111,8 +111,8 @@ static void peek(void) {
 }
 
 static void display(void) {
-    if (isFull()) {
-        printf("Queue overflow!\n");
+    if (isEmpty()) {
+        printf("Queue is empty!\n");
         return;
     }
 

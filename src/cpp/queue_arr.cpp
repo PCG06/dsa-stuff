@@ -103,7 +103,7 @@ static void dequeue(void) {
 
 static void peek(void) {
     if (isEmpty()) {
-        cout << "Queue underflow!\n";
+        cout << "Queue is empty!\n";
         return;
     }
 
@@ -111,8 +111,8 @@ static void peek(void) {
 }
 
 static void display(void) {
-    if (isFull()) {
-        cout << "Queue overflow!\n";
+    if (isEmpty()) {
+        cout << "Queue is empty!\n";
         return;
     }
 
