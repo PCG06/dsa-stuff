@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-void quickSort(int arr[], int left, int right);
+static void quickSort(int arr[], int left, int right);
 
-int main()  {
+int main(void)  {
     int n;
     printf("Enter number of elements: ");
     scanf("%d", &n);
@@ -29,7 +29,7 @@ int main()  {
     return 0;
 }
 
-void quickSort(int arr[], int left, int right) {
+static void quickSort(int arr[], int left, int right) {
     if (left >= right)
         return;
 

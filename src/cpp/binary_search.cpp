@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int binarySearch(vector<int>& arr, int target);
+static int binarySearch(vector<int>& arr, int target);
 
 int main() {
     int n;
@@ -36,7 +36,7 @@ int main() {
     return 0;
 }
 
-int binarySearch(vector<int>& arr, int target) {
+static int binarySearch(vector<int>& arr, int target) {
     int low = 0;
     int high = arr.size() - 1;
 

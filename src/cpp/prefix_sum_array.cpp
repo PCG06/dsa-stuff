@@ -5,8 +5,8 @@
 
 using namespace std;
 
-void prefixArray(vector<int>& arr, vector<int>& prefix);
-int rangeSum(vector<int>& prefix, int left, int right);
+static void prefixArray(vector<int>& arr, vector<int>& prefix);
+static int rangeSum(vector<int>& prefix, int left, int right);
 
 int main() {
     int n;
@@ -43,7 +43,7 @@ int main() {
     return 0;
 }
 
-void prefixArray(vector<int>& arr, vector<int>& prefix) {
+static void prefixArray(vector<int>& arr, vector<int>& prefix) {
     int n = prefix.size();
 
     prefix[0] = arr[0];
@@ -52,7 +52,7 @@ void prefixArray(vector<int>& arr, vector<int>& prefix) {
         prefix[i] = prefix[i - 1] + arr[i];
 }
 
-int rangeSum(vector<int>& prefix, int left, int right) {
+static int rangeSum(vector<int>& prefix, int left, int right) {
     if (left == 0)
         return prefix[right];
 

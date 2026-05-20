@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-void selectionSort(int arr[], int n);
+static void selectionSort(int arr[], int n);
 
-int main() {
+int main(void) {
     int n;
     printf("Enter number of elements: ");
     scanf("%d", &n);
@@ -29,7 +29,7 @@ int main() {
     return 0;
 }
 
-void selectionSort(int arr[], int n) {
+static void selectionSort(int arr[], int n) {
     for (int i = 0; i < n -1; i++) {
         int min = i;
 

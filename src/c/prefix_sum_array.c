@@ -2,10 +2,10 @@
 
 #include <stdio.h>
 
-void prefixArray(int arr[], int prefix[], int n);
-int rangeSum(int prefix[], int left, int right);
+static void prefixArray(int arr[], int prefix[], int n);
+static int rangeSum(int prefix[], int left, int right);
 
-int main() {
+int main(void) {
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -40,14 +40,14 @@ int main() {
     return 0;
 }
 
-void prefixArray(int arr[], int prefix[], int n) {
+static void prefixArray(int arr[], int prefix[], int n) {
     prefix[0] = arr[0];
 
     for (int i = 1; i < n; i++)
         prefix[i] = prefix[i - 1] + arr[i];
 }
 
-int rangeSum(int prefix[], int left, int right) {
+static int rangeSum(int prefix[], int left, int right) {
     if (left == 0)
         return prefix[right];
 

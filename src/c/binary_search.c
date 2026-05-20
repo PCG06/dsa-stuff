@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-int binarySearch(int arr[], int n, int target);
+static int binarySearch(int arr[], int n, int target);
 
-int main() {
+int main(void) {
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -34,7 +34,7 @@ int main() {
     return 0;
 }
 
-int binarySearch(int arr[], int n, int target) {
+static int binarySearch(int arr[], int n, int target) {
     int low = 0;
     int high = n - 1;
 

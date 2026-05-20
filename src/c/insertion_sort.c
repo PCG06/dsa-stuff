@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-void insertionSort(int arr[], int n);
+static void insertionSort(int arr[], int n);
 
-int main() {
+int main(void) {
     int n;
     printf("Enter number of elements: ");
     scanf("%d", &n);
@@ -29,7 +29,7 @@ int main() {
     return 0;
 }
 
-void insertionSort(int arr[], int n) {
+static void insertionSort(int arr[], int n) {
     for (int i = 1; i < n; i++) {
         int key = arr[i];
         int j = i - 1;

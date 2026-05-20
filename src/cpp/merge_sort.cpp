@@ -5,8 +5,8 @@
 
 using namespace std;
 
-void mergeSort(vector<int>& arr, int left, int right);
-void merge(vector<int>& arr, int left, int mid, int right);
+static void mergeSort(vector<int>& arr, int left, int right);
+static void merge(vector<int>& arr, int left, int mid, int right);
 
 int main() {
     int n;
@@ -33,7 +33,7 @@ int main() {
     return 0;
 }
 
-void mergeSort(vector<int>& arr, int left, int right) {
+static void mergeSort(vector<int>& arr, int left, int right) {
     if (left >= right) 
         return;
 
@@ -45,7 +45,7 @@ void mergeSort(vector<int>& arr, int left, int right) {
     merge(arr, left, mid, right);
 }
 
-void merge(vector<int>& arr, int left, int mid, int right) {
+static void merge(vector<int>& arr, int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
 

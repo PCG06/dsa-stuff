@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void bubbleSort(vector<int>& arr);
+static void bubbleSort(vector<int>& arr);
 
 int main() {
     int n;
@@ -32,7 +32,7 @@ int main() {
     return 0;
 }
 
-void bubbleSort(vector<int>& arr) {
+static void bubbleSort(vector<int>& arr) {
     size_t n = arr.size();
 
     for (int i = 0; i < n - 1; i++) {

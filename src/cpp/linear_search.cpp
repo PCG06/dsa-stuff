@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int linearSearch(vector<int>& arr, int target);
+static int linearSearch(vector<int>& arr, int target);
 
 int main() {
     int n;
@@ -36,7 +36,7 @@ int main() {
     return 0;
 }
 
-int linearSearch(vector<int>& arr, int target) {
+static int linearSearch(vector<int>& arr, int target) {
     size_t n = arr.size();
 
     for (int i = 0; i < n; i++) {

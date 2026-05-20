@@ -9,17 +9,17 @@ typedef struct Array {
     size_t capacity;
 } Array;
 
-Array array(size_t capacity);
-void freearr(Array *arr);
-int empty(Array *arr);
-size_t getarrmemory(Array *arr);
-size_t getarrsize(Array *arr);
-size_t getarrcapacity(Array *arr);
-int pusharr(Array *arr, int ele);
-int poparr(Array *arr);
-void sortarr(Array *arr);
+static Array array(size_t capacity);
+static void freearr(Array *arr);
+static int empty(Array *arr);
+static size_t getarrmemory(Array *arr);
+static size_t getarrsize(Array *arr);
+static size_t getarrcapacity(Array *arr);
+static int pusharr(Array *arr, int ele);
+static int poparr(Array *arr);
+static void sortarr(Array *arr);
 
-int main() {
+int main(void) {
     #define MAX 10
     Array arr = array(MAX);
 
@@ -106,7 +106,7 @@ int main() {
 }
 
 // Array functions
-Array array(size_t capacity) {
+static Array array(size_t capacity) {
     Array arr;
 
     if (capacity < 1)
@@ -119,23 +119,23 @@ Array array(size_t capacity) {
     return arr;
 }
 
-int empty(Array *arr) {
+static int empty(Array *arr) {
     return getarrsize(arr) == 0;
 }
 
-size_t getarrmemory(Array *arr) {
+static size_t getarrmemory(Array *arr) {
     return arr->capacity * sizeof(int);
 }
 
-size_t getarrsize(Array *arr) {
+static size_t getarrsize(Array *arr) {
     return arr->size;
 }
 
-size_t getarrcapacity(Array *arr) {
+static size_t getarrcapacity(Array *arr) {
     return arr->capacity;
 }
 
-void freearr(Array *arr) {
+static void freearr(Array *arr) {
     free(arr->data);
     
     arr->data = NULL;
@@ -143,7 +143,7 @@ void freearr(Array *arr) {
     arr->capacity = 0;
 }
 
-int pusharr(Array *arr, int ele) {
+static int pusharr(Array *arr, int ele) {
     if (arr->size >= arr->capacity) {
         arr->capacity *= 2;
 
@@ -158,7 +158,7 @@ int pusharr(Array *arr, int ele) {
     return 0;
 }
 
-int poparr(Array *arr) {
+static int poparr(Array *arr) {
     if (arr->size == 0)
         exit(1);
 
@@ -180,7 +180,7 @@ int poparr(Array *arr) {
     return ele;
 }
 
-int _compare(const void *a, const void *b) {
+static int _compare(const void *a, const void *b) {
     int x = *(int *)a;
     int y = *(int *)b;
 
@@ -189,6 +189,6 @@ int _compare(const void *a, const void *b) {
     return 0;
 }
 
-void sortarr(Array *arr) {
+static void sortarr(Array *arr) {
     qsort(arr->data, arr->size, sizeof(int), _compare);
 }

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void insertionSort(vector<int>& arr);
+static void insertionSort(vector<int>& arr);
 
 int main() {
     int n;
@@ -32,7 +32,7 @@ int main() {
     return 0;
 }
 
-void insertionSort(vector<int>& arr) {
+static void insertionSort(vector<int>& arr) {
     size_t n = arr.size();
 
     for (int i = 1; i < n; i++) {

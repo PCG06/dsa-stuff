@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-int linearSearch(int arr[], int n, int target);
+static int linearSearch(int arr[], int n, int target);
 
-int main() {
+int main(void) {
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -34,7 +34,7 @@ int main() {
     return 0;
 }
 
-int linearSearch(int arr[], int n, int target) {
+static int linearSearch(int arr[], int n, int target) {
     for (int i = 0; i < n; i++) {
         if (arr[i] == target)
             return i;

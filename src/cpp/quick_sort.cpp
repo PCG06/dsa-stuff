@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void quickSort(vector<int>& arr, int left, int right);
+static void quickSort(vector<int>& arr, int left, int right);
 
 int main() {
     int n;
@@ -32,7 +32,7 @@ int main() {
     return 0;
 }
 
-void quickSort(vector<int>& arr, int left, int right) {
+static void quickSort(vector<int>& arr, int left, int right) {
     if (left >= right)
         return;
 

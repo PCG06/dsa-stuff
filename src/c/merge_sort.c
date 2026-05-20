@@ -2,10 +2,10 @@
 
 #include <stdio.h>
 
-void mergeSort(int arr[], int left, int right);
-void merge(int arr[], int left, int mid, int right);
+static void mergeSort(int arr[], int left, int right);
+static void merge(int arr[], int left, int mid, int right);
 
-int main() {
+int main(void) {
     int n;
     printf("Enter number of elements: ");
     scanf("%d", &n);
@@ -30,7 +30,7 @@ int main() {
     return 0;
 }
 
-void mergeSort(int arr[], int left, int right) {
+static void mergeSort(int arr[], int left, int right) {
     if (left >= right) 
         return;
 
@@ -42,7 +42,7 @@ void mergeSort(int arr[], int left, int right) {
     merge(arr, left, mid, right);
 }
 
-void merge(int arr[], int left, int mid, int right) {
+static void merge(int arr[], int left, int mid, int right) {
     int n1 = mid - left + 1;
     int n2 = right - mid;
 

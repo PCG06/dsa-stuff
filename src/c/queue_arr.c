@@ -13,7 +13,7 @@ static void dequeue(void);
 static void peek(void);
 static void display(void);
 
-int main() {
+int main(void) {
     int ch = 0;
 
     do {
