@@ -97,7 +97,7 @@ static void pop(void) {
 
 static void peek(void) {
     if (isEmpty()) {
-        cout << "Stack underflow!\n";
+        cout << "Stack is empty!\n";
         return;
     }
 
@@ -106,7 +106,7 @@ static void peek(void) {
 
 static void display(void) {
     if (isEmpty()) {
-        cout << "Stack underflow!\n";
+        cout << "Stack is empty!\n";
         return;
     }
 

@@ -27,7 +27,7 @@ fun main() {
             // 1. Enqueue
             1 -> {
                 print("Enter an element: ")
-                var ele = sc.nextInt()
+                val ele = sc.nextInt()
                 enqueue(ele)
             }
 
@@ -74,7 +74,7 @@ fun enqueue(ele: Int) {
 
 fun dequeue() {
     if (isEmpty()) {
-        print("Queue underflow!")
+        println("Queue underflow!")
         return
     }
 

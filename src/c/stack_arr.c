@@ -94,7 +94,7 @@ static void pop(void) {
 
 static void peek(void) {
     if (isEmpty()) {
-        printf("Stack underflow!\n");
+        printf("Stack is empty!\n");
         return;
     }
 
@@ -103,7 +103,7 @@ static void peek(void) {
 
 static void display(void) {
     if (isEmpty()) {
-        printf("Stack underflow!\n");
+        printf("Stack is empty!\n");
         return;
     }
 

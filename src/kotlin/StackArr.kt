@@ -79,7 +79,7 @@ fun pop() {
 
 fun peek() {
     if (isEmpty()) {
-        println("Stack underflow!")
+        println("Stack is empty!")
         return
     }
 
@@ -88,7 +88,7 @@ fun peek() {
 
 fun display() {
     if (isEmpty()) {
-        println("Stack underflow!")
+        println("Stack is empty!")
         return
     }
 

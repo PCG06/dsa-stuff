@@ -89,7 +89,7 @@ public class QueueArr {
 
     static void dequeue() {
         if (isEmpty()) {
-            System.out.print("Queue underflow!");
+            System.out.println("Queue underflow!");
             return;
         }
 

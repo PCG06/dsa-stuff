@@ -92,7 +92,7 @@ public class StackArr {
 
     static void peek() {
         if (isEmpty()) {
-            System.out.println("Stack underflow!");
+            System.out.println("Stack is empty!");
             return;
         }
 
@@ -101,7 +101,7 @@ public class StackArr {
 
     static void display() {
         if (isEmpty()) {
-            System.out.println("Stack underflow!");
+            System.out.println("Stack is empty!");
             return;
         }
 
